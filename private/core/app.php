@@ -8,12 +8,16 @@ class App
     protected $params = array();
     public function __construct()
     {
-        echo "<pre>";
-        print_r($this->getURL());
+
+        $URL = $this->getURL();
+        if (file_exists($URL[0])) {
+            $this->controller = $URL[0];
+        }
     }
 
     private function getURL()
     {
-        return explode("/", filter_var(trim($_GET['url'], "/"), FILTER_SANITIZE_URL));
+        $url = isset($_GET['url']) ? $_GET['url'] : "home";
+        return explode("/", filter_var(trim($url, "/"), FILTER_SANITIZE_URL));
     }
 }
