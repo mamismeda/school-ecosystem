@@ -10,9 +10,12 @@ class App
     {
 
         $URL = $this->getURL();
-        if (file_exists("../private/controllers".$URL[0].".php")) {
+        if (file_exists("../private/controllers/" . $URL[0] . ".php")) {
             $this->controller = $URL[0];
         }
+
+        require "../private/controllers/" . $this->controller . ".php";
+        $this->controller = new $this->controller();
     }
 
     private function getURL()
