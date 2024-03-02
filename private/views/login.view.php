@@ -1,7 +1,7 @@
 <?php $this->view('includes/header') ?>
 
 <div class="container-fluid">
-    <div class="m-auto shadow rounded" style="width: 100%;max-width: 310px">
+    <div class="shadow rounded m-auto" style="width: 100%;max-width: 310px">
         something to see
     </div>
 </div>
