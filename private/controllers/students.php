@@ -3,7 +3,7 @@
 // home controller 
 class Students extends Controller
 {
-    function __construct()
+    function index()
     {
         echo "this is the students controller ";
     }
