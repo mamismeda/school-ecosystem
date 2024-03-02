@@ -3,8 +3,8 @@
 // home controller 
 class Students extends Controller
 {
-    function index()
+    function index($id = null)
     {
-        echo "this is the students controller ";
+        echo "this is the students controller ". $id;
     }
 }
