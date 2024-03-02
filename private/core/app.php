@@ -8,12 +8,12 @@ class App
     protected $params = array();
     public function __construct()
     {
+        echo "<pre>";
         print_r($this->getURL());
     }
 
     private function getURL()
     {
-        echo "<pre>";
-        print_r($_GET);
+        return explode("/", filter_var(trim($_GET['url'], "/"), FILTER_SANITIZE_URL));
     }
 }
