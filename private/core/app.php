@@ -10,7 +10,7 @@ class App
     {
 
         $URL = $this->getURL();
-        if (file_exists($URL[0])) {
+        if (file_exists("../private/controllers".$URL[0].".php")) {
             $this->controller = $URL[0];
         }
     }
