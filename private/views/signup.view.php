@@ -24,7 +24,8 @@
         </select>
         <input class="my-2 form-control" type="text" name="password" placeholder="Password">
         <input class="my-2 form-control" type="text" name="password2" placeholder="Retype Password">
-        <button class="btn btn-primary">Add User</button>
+        <button class="btn btn-primary float-end">Add User</button>
+        <button class="btn btn-danger text-white">Cancel</button>
     </div>
 </div>
 
