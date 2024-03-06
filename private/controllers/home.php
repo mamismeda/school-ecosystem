@@ -5,8 +5,10 @@ class Home extends Controller
 {
     function index()
     {
-        $db = new Database();
-        $data = $db->query("SELECT * from users");
+        $user = $this->load_model('user');
+        //$data = $db->query("SELECT * from users");
+
+        $data =$user->where('firstname', 'john');
         echo $this->view('home', ['rows' => $data]);
     }
 }
