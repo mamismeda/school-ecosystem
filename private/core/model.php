@@ -3,7 +3,7 @@
 // main model
 class Model extends Database
 {
-    protected $table = "user";
+    protected $table = "users";
 
     function __construct()
     {
@@ -17,6 +17,14 @@ class Model extends Database
             'value' => $value
         ]);
     }
+
+    public function findAll()
+    {
+        
+        $query = "select * from $this->table";
+        return $this->query($query);
+    }
+
 
     
 }
