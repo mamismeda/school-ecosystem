@@ -3,15 +3,14 @@
 // main model
 class Model extends Database
 {
-   
+
 
     function __construct()
     {
         echo $this::class;
-      if(!property_exists($this, 'table'))
-      {
-        $this->table = strtolower($this::class) . "s";
-      }
+        if (!property_exists($this, 'table')) {
+            $this->table = strtolower($this::class) . "s";
+        }
     }
 
     public function where($column, $value)
@@ -25,7 +24,7 @@ class Model extends Database
 
     public function findAll()
     {
-        
+
         $query = "select * from $this->table";
         return $this->query($query);
     }
@@ -36,10 +35,20 @@ class Model extends Database
         $columns = implode(',', $keys);
         $values = implode(',:', $keys);
         $query = "insert into $this->table ($columns) values (:$values)";
-        
+
         return $this->query($query, $data);
     }
 
+    public function update($id, $data)
+    {
+        $str = '';
+        foreach ($data as $key => $value) {
+            $str .= $key . "=:" . $key . ",";
+        }
+        $str = trim($str, ",");
+        $data['id'] = $id;
+        $query = "update $this->table set $str where id = :id";
 
-    
+        return $this->query($query, $data);
+    }
 }
