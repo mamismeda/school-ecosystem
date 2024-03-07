@@ -3,6 +3,12 @@
     background-color: #ccc;
     color: #fff !important;
   }
+  nav ul li a {
+    width: 100px;
+    text-align: center;
+    border-left:solid thing #eee;
+    border-right:solid thing #fff;
+  }
 </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
   <div class="container-fluid">
@@ -25,11 +31,13 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= ROOT ?>/tests">Tests</a>
         </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             USER
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="<?= ROOT ?>/profile">Profile</a></li>
             <li><a class="dropdown-item" href="<?= ROOT ?>">Dashboard</a></li>
             <div class="dropdown-divider"></div>

@@ -7,7 +7,6 @@ class Model extends Database
 
     function __construct()
     {
-        echo $this::class;
         if (!property_exists($this, 'table')) {
             $this->table = strtolower($this::class) . "s";
         }
