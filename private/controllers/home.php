@@ -7,11 +7,21 @@ class Home extends Controller
     {
         $user = new User();
 
+
+        $arr['firstname'] = 'mario';
+        $arr['lastname'] = 'baloteli';
+        $arr['date'] = '2024-03-06 03:34:14';
+        $arr['user_id'] = 'dnd';
+        $arr['gender'] = 'male';
+        $arr['school_id'] = 'asda';
+        $arr['rank'] = 'student';
+
+        $user->insert($arr);
+
         $data = $user->findAll();
 
-       // $data =$user->where('firstname', 'john');
-       $user->insert($data);
-       
+        // $data =$user->where('firstname', 'john');
+
         $this->view('home', ['rows' => $data]);
     }
 }

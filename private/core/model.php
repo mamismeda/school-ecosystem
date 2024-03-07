@@ -35,7 +35,7 @@ class Model extends Database
         $keys = array_keys($data);
         $columns = implode(',', $keys);
         $values = implode(',:', $keys);
-        $query = "insert into table ($columns) values (':'.$values)";
+        $query = "insert into $this->table ($columns) values (:$values)";
         
         return $this->query($query, $data);
     }
