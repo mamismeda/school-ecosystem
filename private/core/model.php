@@ -3,9 +3,10 @@
 // main model
 class Model extends Database
 {
+    public $errors = array();
 
 
-    function __construct()
+    public function __construct()
     {
         if (!property_exists($this, 'table')) {
             $this->table = strtolower($this::class) . "s";
@@ -53,7 +54,7 @@ class Model extends Database
 
     public function delete($id)
     {
-        
+
         $query = "delete from $this->table where id = :id";
 
         $data['id'] = $id;
