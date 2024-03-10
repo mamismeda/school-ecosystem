@@ -5,6 +5,11 @@ class Signup extends Controller
 {
     function index()
     {
-        echo $this->view('signup');
+
+        if(count($_POST) > 0)
+        {
+            $user = new User();
+        }
+        $this->view('signup');
     }
 }
