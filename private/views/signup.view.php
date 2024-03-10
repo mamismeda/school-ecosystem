@@ -1,5 +1,8 @@
 <?php $this->view('includes/header') ?>
 
+<?php
+  print_r($errors);
+?>
 <div class="container-fluid">
     <form method="post">
         <div class="p-3 shadow rounded mx-auto" style="margin-top:50px;width: 100%;max-width: 340px">
