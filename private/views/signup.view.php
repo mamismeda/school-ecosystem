@@ -1,7 +1,7 @@
 <?php $this->view('includes/header') ?>
 
 <?php
-  print_r($errors);
+print_r($errors);
 ?>
 <div class="container-fluid">
     <form method="post">
@@ -9,9 +9,9 @@
             <h2 class="text-center">My School</h2>
             <img src="<?= ROOT ?>/assets/logo.png" class="d-block mx-auto rounded-circle" style="width:100px;">
             <h3>Add User</h3>
-            <input class="my-2 form-control" type="text" name="firstname" placeholder="First Name">
-            <input class="my-2 form-control" type="text" name="lastname" placeholder="Last Name">
-            <input class="my-2 form-control" type="email" name="email" placeholder="Email">
+            <input class="my-2 form-control" value="<?= get_var('firstname') ?>" type="text" name="firstname" placeholder="First Name">
+            <input class="my-2 form-control" value="<?= get_var('lastname') ?>" type="text" name="lastname" placeholder="Last Name">
+            <input class="my-2 form-control" value="<?= get_var('email') ?>" type="email" name="email" placeholder="Email">
 
             <select class="my-2 form-control" name="gender">
                 <option value="">-- Select a Gender--</option>
