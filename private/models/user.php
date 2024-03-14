@@ -17,6 +17,16 @@ class User extends Model
             $this->errors['lastname'] = "Only letters allowed in last name";
         }
 
+        // check for password
+        if (empty($DATA['password']) || $DATA['password'] !== $DATA['password2']) {
+            $this->errors['password'] = "Password do not match";
+        }
+
+        // check for password legnth
+        if (strlen($DATA['password']) <= 8) {
+            $this->errors['password'] = "Password must be at least 8 characters";
+        }
+
         // check for email
         if (empty($DATA['email']) || !filter_var($DATA['email'], FILTER_VALIDATE_EMAIL)) {
             $this->errors['email'] = "Email is not valid";
