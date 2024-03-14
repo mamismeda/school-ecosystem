@@ -1,14 +1,24 @@
 <?php $this->view('includes/header') ?>
 
-<?php
-print_r($errors);
-?>
 <div class="container-fluid">
     <form method="post">
         <div class="p-3 shadow rounded mx-auto" style="margin-top:50px;width: 100%;max-width: 340px">
             <h2 class="text-center">My School</h2>
             <img src="<?= ROOT ?>/assets/logo.png" class="d-block mx-auto rounded-circle" style="width:100px;">
             <h3>Add User</h3>
+
+            <?php if (count($errors) > 0) : ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Errors:</strong>
+
+                    <?php foreach ($errors as $error) : ?>
+                        <br> <?=$error?>
+                    <?php endforeach; ?>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
+
             <input class="my-2 form-control" value="<?= get_var('firstname') ?>" type="text" name="firstname" placeholder="First Name">
             <input class="my-2 form-control" value="<?= get_var('lastname') ?>" type="text" name="lastname" placeholder="Last Name">
             <input class="my-2 form-control" value="<?= get_var('email') ?>" type="email" name="email" placeholder="Email">
@@ -26,8 +36,8 @@ print_r($errors);
                 <option <?= get_select('rank', 'admin') ?> value="admin">Admin</option>
                 <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
             </select>
-            <input <?= get_var('password') ?> class="my-2 form-control" type="text" name="password" placeholder="Password">
-            <input <?= get_var('password2') ?> class="my-2 form-control" type="text" name="password2" placeholder="Retype Password">
+            <input value="<?= get_var('password') ?>" class="my-2 form-control" type="text" name="password" placeholder="Password">
+            <input value="<?= get_var('password2') ?>" class="my-2 form-control" type="text" name="password2" placeholder="Retype Password">
             <button class="btn btn-primary float-end">Add User</button>
             <button type="button" class="btn btn-danger text-white">Cancel</button>
         </div>
