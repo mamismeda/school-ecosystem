@@ -14,20 +14,20 @@ print_r($errors);
             <input class="my-2 form-control" value="<?= get_var('email') ?>" type="email" name="email" placeholder="Email">
 
             <select class="my-2 form-control" name="gender">
-                <option value="">-- Select a Gender--</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option <?= get_select('gender', '') ?> value="">-- Select a Gender--</option>
+                <option <?= get_select('gender', 'male') ?> value="male">Male</option>
+                <option <?= get_select('gender', 'female') ?> value="female">Female</option>
             </select>
             <select class="my-2 form-control" name="rank">
-                <option value="">-- Select a Rank--</option>
-                <option value="student">Student</option>
-                <option value="reception">Reception</option>
-                <option value="lecturer">Lecturer</option>
-                <option value="admin">Admin</option>
-                <option value="super">Super Admin</option>
+                <option <?= get_select('rank', '') ?> value="">-- Select a Rank--</option>
+                <option <?= get_select('rank', 'student') ?> value="student">Student</option>
+                <option <?= get_select('rank', 'reception') ?> value="reception">Reception</option>
+                <option <?= get_select('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
+                <option <?= get_select('rank', 'admin') ?> value="admin">Admin</option>
+                <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
             </select>
-            <input class="my-2 form-control" type="text" name="password" placeholder="Password">
-            <input class="my-2 form-control" type="text" name="password2" placeholder="Retype Password">
+            <input <?= get_var('password') ?> class="my-2 form-control" type="text" name="password" placeholder="Password">
+            <input <?= get_var('password2') ?> class="my-2 form-control" type="text" name="password2" placeholder="Retype Password">
             <button class="btn btn-primary float-end">Add User</button>
             <button type="button" class="btn btn-danger text-white">Cancel</button>
         </div>
